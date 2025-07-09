@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Mitr", sans-serif;
+}
+
+:root {
+    --colorRight: #3aa394;
+    --colorPlace: #d3ad69;
+    --colorWrong: #312a2c;
+    --colorWrongFG: #504a4b;
+}
+
+body {
+    background-color: #6e5c62;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+header {
+    h1 {
+        font-size: 24px;
+        color: white;
+    }
+
+    span {
+        color: var(--colorRight);
+    }
+}
+
+img {
+    width: 400px;
+    margin: 20px 0;
+    border-radius: 20px;
+}
+
+.letras {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.row {
+    display: flex;
+    gap: 8px;
+}
+
+.letra {
+    width: 65px;
+    height: 65px;
+    background-color: #6e5c62;
+    border: 6px solid var(--colorWrong);
+    color: white;
+    font-weight: bolder;
+    font-size: 50px;
+    border-radius: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all ease-in-out 500ms;
+    padding: 4px;
+}
+
+.letra:focus {
+    border-bottom: 10px solid var(--colorWrong);
+}
+
+.certa {
+    background-color: #3aa394;
+    border: none;
+}
+
+.lugar-errado {
+    background-color: #d3ad69;
+    border: none;
+}
+
+.errada {
+    background-color: #312a2c;
+}
+
+.espaco {
+    border: none;
+}
+
+.row-error {
+    animation: blur 0.1s ease-in infinite;
+}
+
+.btnJogar {
+    border-radius: 20px;
+    padding: 12px 20px;
+    border: 2px solid white;
+    background-color: #3aa394;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all ease 100ms;
+    display: none;
+}
+
+.btnJogar:hover {
+    background-color: #205d54;
+}
+
+.dica {
+    font-size: 35px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 25px;
+}
+
+@keyframes blur {
+    0% {
+        margin-left: -50px;
+    }
+    50% {
+        margin-left: 50px;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 576px) {
+    .letras {
+        gap: 0px;
+    }
+
+    .letra {
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--colorWrong);
+    }
+
+    .letra:focus {
+        border-bottom: 4px solid var(--colorWrong);
+    }
+
+    .row {
+        gap: 2px;
+    }
+
+    .dica {
+        font-size: 25px;
+    }
+}
